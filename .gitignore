@@ -11,5 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-gtd.csv
+*.csv
 .DS_Store

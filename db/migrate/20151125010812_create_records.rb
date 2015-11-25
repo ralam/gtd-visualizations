@@ -1,17 +1,16 @@
 class CreateRecords < ActiveRecord::Migration
   def change
     create_table :records do |t|
-      t.integer :event_id, null: false
       t.integer :iyear, null: false
       t.integer :imonth, null: false
-      t.integer :idate, null: false
+      t.integer :iday, null: false
       t.string :approxdate
       t.boolean :extended
       t.string :resolution
       t.integer :country, null: false
       t.string :country_txt, null: false
       t.integer :region, null: false
-      t.string :region_text, null: false
+      t.string :region_txt, null: false
       t.string :provstate
       t.string :city
       t.float :latitude
@@ -29,6 +28,7 @@ class CreateRecords < ActiveRecord::Migration
       t.string :targtype1_txt, null: false
       t.integer :targsubtype1
       t.string :targsubtype1_txt
+      t.string :corp1
       t.string :target1
       t.string :natlty1
       t.string :natlty1_txt
@@ -51,7 +51,7 @@ class CreateRecords < ActiveRecord::Migration
       t.integer :property
       t.integer :propextent
       t.string  :propextent_txt
-      t.integer :propvale
+      t.string :propvalue
       t.string :propcomment
       t.boolean :ishostkid
       t.integer :nhostkid

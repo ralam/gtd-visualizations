@@ -1,0 +1,14 @@
+json.extract!(
+  record,
+  :iyear,
+  :imonth,
+  :iday,
+  :country,
+  :country_txt,
+  :region,
+  :region_txt,
+  :provstate,
+  :city,
+  :suicide,
+  :gname,
+)

@@ -1,14 +1,20 @@
 <h2>Make a selection</h2>
-<form>
+<form class="data-selection">
   <label>
     Country
-    <input type="option" name="country">
+    <select name="country">
+      <% @countries.each do |country| %>
+        <option value="<%=country%>"><%=country%></option>
+      <% end %>
     </input>
-  </label>
+  </select>
   <label>
     Year
-    <input type="option" name="year">
+    <select name="year">
+      <% @years.each do |year| %>
+        <option value="<%=year%>"><%=year%></option>
+      <% end %>
     </input>
-  </label>
+  </select>
   <input type="submit" value="Submit"/>
 </form>

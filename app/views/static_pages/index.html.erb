@@ -1,14 +1,4 @@
-<script type="text/javascript">
-  $(function() {
-    $('form').on('submit', function(e) {
-      e.preventDefault();
-      var formData = $(event.currentTarget).serializeJSON();
-      var country = formData.country;
-      var year = formData.year;
-      console.log('Country: ' + country + '; Year: ' + year);
-    });
-  });
-</script>
+
 <h2>Make a selection</h2>
 <form class="data-selection">
   <label>
@@ -29,3 +19,9 @@
   </select>
   <input type="submit" value="Submit"/>
 </form>
+<script type="text/javascript">
+  $(function () {
+    var formParser = new window.Display.formParser();
+    formParser.handleSubmit();
+  })
+</script>

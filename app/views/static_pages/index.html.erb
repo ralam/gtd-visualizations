@@ -21,9 +21,10 @@
 </form>
 <div id="month-chart" style="width:400px; height:400px;"></div>
 <div id="attacks-chart" style="width:400px; height:400px;"></div>
+<div id="suicides-chart" style="width:400px; height:400px;"></div>
 <script type="text/javascript">
   $(function () {
-    var formParser = new window.Display.FormParser($('#month-chart'), $('#attacks-chart'));
+    var formParser = new window.Display.FormParser($('#month-chart'), $('#attacks-chart'), $('#suicides-chart'));
     // var monthsChart = new window.Display.MonthsChart($('#month-chart'));
     formParser.handleSubmit();
   })

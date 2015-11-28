@@ -3,9 +3,10 @@
     window.Display = {};
   };
 
-  var FormParser = Display.FormParser = function (monthsEl, attacksEl) {
+  var FormParser = Display.FormParser = function (monthsEl, attacksEl, suicidesEl) {
     this.monthsChart = new window.Display.MonthsChart(monthsEl);
-    this.attackschart = new window.Display.AttacksChart(attacksEl);
+    this.attacksChart = new window.Display.AttacksChart(attacksEl);
+    this.suicidesChart = new window.Display.SuicidesChart(suicidesEl);
   };
 
   FormParser.prototype.handleSubmit = function() {
@@ -23,7 +24,8 @@
         success: function(response, XHR, textStatus) {
           console.dir(response);
           this.monthsChart.render(response.months); // need to refactor
-          this.attackschart.render(response.attackTypes);
+          this.attacksChart.render(response.attackTypes);
+          this.suicidesChart.render(response.suicideAttacks, response.nonSuicideAttacks);
         }.bind(this),
         error: function(XHR, textStatus, errorThrown) {
           console.log(XHR);

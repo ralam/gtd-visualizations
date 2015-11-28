@@ -11,4 +11,5 @@ json.extract!(
   :city,
   :suicide,
   :gname,
+  :attacktype1_txt
 )

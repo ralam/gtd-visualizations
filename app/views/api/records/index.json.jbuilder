@@ -6,9 +6,13 @@ json.records @records.each do |record|
 end
 
 # Number of attacks per city
-unique_cities = records.uniq{|record| record.city}
-
 city_frequency = Hash.new(0)
-unique_cities.each {|city| city_frequency[city.city] += 1}
+records.each {|city| city_frequency[city.city] += 1}
 
 json.cities = city_frequency
+
+# Number of attacks by attack type
+attack_types = Hash.new(0)
+records.each {|record| attack_types[record.attacktype1_txt] += 1}
+
+json.attackTypes = attack_types

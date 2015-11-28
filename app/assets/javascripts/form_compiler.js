@@ -3,15 +3,17 @@
     window.Display = {};
   };
 
-  var formParser = Display.formParser = function () {
+  var FormParser = Display.FormParser = function (el) {
+    this.monthsChart = new window.Display.MonthsChart(el);
   };
 
-  formParser.prototype.handleSubmit = function() {
+  FormParser.prototype.handleSubmit = function() {
     $('form').on('submit', function(e){
       e.preventDefault();
       var formData = $(event.currentTarget).serializeJSON();
       var country = formData.country;
       var year = formData.year;
+
       console.log('Country: ' + country + '; Year: ' + year);
       $.ajax({
         url: "./api/records",
@@ -19,11 +21,12 @@
         dataType: 'json',
         success: function(response, XHR, textStatus) {
           console.dir(response);
-        },
+          this.monthsChart.render(response.months); // need to refactor
+        }.bind(this),
         error: function(XHR, textStatus, errorThrown) {
           console.log(XHR);
         }
       });
-    });
+    }.bind(this));
   };
 })()

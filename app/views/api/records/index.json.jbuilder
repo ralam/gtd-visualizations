@@ -19,4 +19,4 @@ end
 json.months month_frequency
 json.attackTypes attack_types
 json.suicideAttacks suicide_attacks
-json.nonSuicideAttack non_suicide_attacks
+json.nonSuicideAttacks non_suicide_attacks

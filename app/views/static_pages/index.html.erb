@@ -19,14 +19,16 @@
   </select>
   <input type="submit" value="Submit"/>
 </form>
+<div id="month-chart" style="width:400px; height:400px;"></div>
 <script type="text/javascript">
   $(function () {
-    var formParser = new window.Display.formParser();
+    var formParser = new window.Display.FormParser($('#month-chart'));
+    // var monthsChart = new window.Display.MonthsChart($('#month-chart'));
     formParser.handleSubmit();
   })
 </script>
-<div id="month-chart" style="width:400px; height:400px;"></div>
-<script type='text/javascript'>
+
+<!-- <script type='text/javascript'>
   $(function () {
     $('#month-chart').highcharts({
         chart: {
@@ -49,4 +51,4 @@
         }]
     });
   });
-</script>
+</script> -->

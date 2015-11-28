@@ -25,7 +25,7 @@
         dataType: 'json',
         success: function(response, XHR, textStatus) {
           console.dir(response);
-          this.monthsChart.update(response.countryName, response.months, Id);
+          this.monthsChart.update(response.countryName, year, response.months, Id);
           this.attacksChart.render(response.attackTypes);
           this.suicidesChart.render(response.suicideAttacks, response.nonSuicideAttacks);
         }.bind(this),

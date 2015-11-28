@@ -28,13 +28,13 @@
           }
         },
         series: [{
-          name: 'Attacks in Country 1',
+          name: 'Please select a country using the form',
           data: []
         }, {
-          name: 'Attacks in Country 2',
+          name: 'Please select a country using the form',
           data: []
         }, {
-          name: 'Attacks in Country 3',
+          name: 'Please select a country using the form',
           data: []
         }],
         credits: {
@@ -44,8 +44,9 @@
     return chart;
   };
 
-  MonthsChart.prototype.update = function(country, attacksPerMonth, id){
-    this.chart.series[id].update({name: country}, false);
+  MonthsChart.prototype.update = function(country, year, attacksPerMonth, id){
+    var name = '' + country + ' (' + year + ')';
+    this.chart.series[id].update({name: name}, false);
     this.chart.series[id].setData(attacksPerMonth);
   };
 })();

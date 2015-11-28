@@ -1,18 +1,21 @@
-records = []
-
-json.records @records.each do |record|
-  json.partial!('api/records/records', record: record)
-  records << record
-end
-
-# Number of attacks per city
-city_frequency = Hash.new(0)
-records.each {|city| city_frequency[city.city] += 1}
-
-json.cities = city_frequency
+# Number of attacks per month
+month_frequency = Hash.new(0)
 
 # Number of attacks by attack type
 attack_types = Hash.new(0)
-records.each {|record| attack_types[record.attacktype1_txt] += 1}
 
+# Number of suicide attacks
+suicide_attacks = 0
+non_suicide_attacks = 0
+
+json.records @records.each do |record|
+  json.partial!('api/records/records', record: record)
+  month_frequency[record.imonth] += 1
+  attack_types[record.attacktype1_txt] += 1
+  record.suicide ? suicide_attacks += 1 : non_suicide_attacks += 1
+end
+
+json.months = month_frequency
 json.attackTypes = attack_types
+json.suicideAttacks = suicide_attacks
+json.nonSuicideAttack = non_suicide_attacks

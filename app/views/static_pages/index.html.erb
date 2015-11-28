@@ -20,35 +20,11 @@
   <input type="submit" value="Submit"/>
 </form>
 <div id="month-chart" style="width:400px; height:400px;"></div>
+<div id="attacks-chart" style="width:400px; height:400px;"></div>
 <script type="text/javascript">
   $(function () {
-    var formParser = new window.Display.FormParser($('#month-chart'));
+    var formParser = new window.Display.FormParser($('#month-chart'), $('#attacks-chart'));
     // var monthsChart = new window.Display.MonthsChart($('#month-chart'));
     formParser.handleSubmit();
   })
 </script>
-
-<!-- <script type='text/javascript'>
-  $(function () {
-    $('#month-chart').highcharts({
-        chart: {
-            type: 'line'
-        },
-        title: {
-            text: 'Attacks per month'
-        },
-        xAxis: {
-            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-        },
-        yAxis: {
-            title: {
-                text: 'Number of attacks'
-            }
-        },
-        series: [{
-            name: 'Attacks',
-            data: [1,2,3,4,5,6,7,8,9,10,11,12]
-        }]
-    });
-  });
-</script> -->

@@ -3,8 +3,9 @@
     window.Display = {};
   };
 
-  var FormParser = Display.FormParser = function (el) {
-    this.monthsChart = new window.Display.MonthsChart(el);
+  var FormParser = Display.FormParser = function (monthsEl, attacksEl) {
+    this.monthsChart = new window.Display.MonthsChart(monthsEl);
+    this.attackschart = new window.Display.AttacksChart(attacksEl);
   };
 
   FormParser.prototype.handleSubmit = function() {
@@ -22,6 +23,7 @@
         success: function(response, XHR, textStatus) {
           console.dir(response);
           this.monthsChart.render(response.months); // need to refactor
+          this.attackschart.render(response.attackTypes);
         }.bind(this),
         error: function(XHR, textStatus, errorThrown) {
           console.log(XHR);

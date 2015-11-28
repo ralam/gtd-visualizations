@@ -7,7 +7,7 @@
     this.$chart = element;
   };
 
-  MonthsChart.prototype.render = function (attackTypes) {
+  MonthsChart.prototype.render = function (attacksPerMonth) {
     this.$chart.highcharts({
         chart: {
             type: 'line'
@@ -25,7 +25,7 @@
         },
         series: [{
             name: 'Attacks',
-            data: attackTypes
+            data: attacksPerMonth
         }]
     });
   };

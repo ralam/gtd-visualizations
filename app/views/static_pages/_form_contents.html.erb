@@ -1,0 +1,17 @@
+<label>
+  Country
+  <select name="country" id="country">
+    <% @countries.each do |country| %>
+      <option value="<%=country%>"><%=country%></option>
+    <% end %>
+  </input>
+</select>
+<label>
+  Year
+  <select name="year" id="year">
+    <% @years.each do |year| %>
+      <option value="<%=year%>"><%=year%></option>
+    <% end %>
+  </input>
+</select>
+<input type="submit" value="Submit"/>

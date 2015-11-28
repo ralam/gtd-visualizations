@@ -1,23 +1,15 @@
 <h1>Terrorist Attacks by Year and Country</h1>
 <h2>Make a selection</h2>
-<form class="data-selection">
-  <label>
-    Country
-    <select name="country" id="country">
-      <% @countries.each do |country| %>
-        <option value="<%=country%>"><%=country%></option>
-      <% end %>
-    </input>
-  </select>
-  <label>
-    Year
-    <select name="year" id="year">
-      <% @years.each do |year| %>
-        <option value="<%=year%>"><%=year%></option>
-      <% end %>
-    </input>
-  </select>
-  <input type="submit" value="Submit"/>
+<form class="data-selection" id="country-1">
+  <%= render "static_pages/form_contents" %>
+</form>
+
+<form class="data-selection" id="country-2">
+  <%= render "static_pages/form_contents" %>
+</form>
+
+<form class="data-selection" id="country-3">
+  <%= render "static_pages/form_contents" %>
 </form>
 <div id="month-chart" style="width:400px; height:400px;"></div>
 <div id="attacks-chart" style="width:400px; height:400px;"></div>

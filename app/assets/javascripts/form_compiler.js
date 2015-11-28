@@ -13,6 +13,8 @@
     $('form').on('submit', function(e){
       e.preventDefault();
       var formData = $(event.currentTarget).serializeJSON();
+      var formID = $(event.currentTarget).attr('id');
+      var Id = formID[formID.length - 1] - 1;
       var country = formData.country;
       var year = formData.year;
 
@@ -23,8 +25,7 @@
         dataType: 'json',
         success: function(response, XHR, textStatus) {
           console.dir(response);
-          // this.monthsChart.render(response.months); // need to refactor
-          this.monthsChart.updateFirstCountry(response.countryName, response.months);
+          this.monthsChart.update(response.countryName, response.months, Id);
           this.attacksChart.render(response.attackTypes);
           this.suicidesChart.render(response.suicideAttacks, response.nonSuicideAttacks);
         }.bind(this),

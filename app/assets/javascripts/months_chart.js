@@ -28,13 +28,13 @@
           }
         },
         series: [{
-          name: 'Attacks in Country A',
+          name: 'Attacks in Country 1',
           data: []
         }, {
-          name: 'Attacks in Country B',
+          name: 'Attacks in Country 2',
           data: []
         }, {
-          name: 'Attacks in Country C',
+          name: 'Attacks in Country 3',
           data: []
         }],
         credits: {
@@ -44,18 +44,8 @@
     return chart;
   };
 
-  MonthsChart.prototype.updateFirstCountry = function(country, attacksPerMonth){
-    this.chart.series[0].update({name: country}, false);
-    this.chart.series[0].setData(attacksPerMonth);
-  };
-
-  MonthsChart.prototype.updateSecondCountry = function(country, attacksPerMonth){
-    this.chart.series[1].update({name: country}, false);
-    this.chart.series[1].setData(attacksPerMonth);
-  };
-
-  MonthsChart.prototype.updateThirdCountry = function(country, attacksPerMonth){
-    this.chart.series[2].update({name: country}, false);
-    this.chart.series[2].setData(attacksPerMonth);
+  MonthsChart.prototype.update = function(country, attacksPerMonth, id){
+    this.chart.series[id].update({name: country}, false);
+    this.chart.series[id].setData(attacksPerMonth);
   };
 })();

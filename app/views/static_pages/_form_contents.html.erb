@@ -1,5 +1,6 @@
 <label>
-  Country
+  Country <%= "#{@counter}" %>:
+  <% @counter += 1 %>
   <select name="country" id="country">
     <% @countries.each do |country| %>
       <option value="<%=country%>"><%=country%></option>

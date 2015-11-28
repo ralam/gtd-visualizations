@@ -5,9 +5,6 @@
 
   var MonthsChart = Display.MonthsChart = function (el) {
     this.chart = createChart(el);
-    this.country1 = "";
-    this.country2 = "";
-    this.country3 = "";
   };
 
   var createChart = function (el) {

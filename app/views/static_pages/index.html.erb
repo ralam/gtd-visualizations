@@ -28,27 +28,24 @@
 <div id="month-chart" style="width:400px; height:400px;"></div>
 <script type='text/javascript'>
   $(function () {
-    $('#container').highcharts({
+    $('#month-chart').highcharts({
         chart: {
-            type: 'bar'
+            type: 'line'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Attacks per month'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Number of attacks'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'Attacks',
+            data: [1,2,3,4,5,6,7,8,9,10,11,12]
         }]
     });
   });

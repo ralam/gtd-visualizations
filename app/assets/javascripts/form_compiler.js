@@ -27,7 +27,7 @@
           console.dir(response);
           this.monthsChart.update(country, year, response.months, Id);
           this.attacksChart.update(country, year, response.attackTypes, Id);
-          this.suicidesChart.render(response.suicideAttacks, response.nonSuicideAttacks);
+          this.suicidesChart.update(country, year, response.suicideAttacks, response.nonSuicideAttacks);
         }.bind(this),
         error: function(XHR, textStatus, errorThrown) {
           console.log(XHR);

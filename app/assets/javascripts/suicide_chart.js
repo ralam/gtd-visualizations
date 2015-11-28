@@ -4,16 +4,17 @@
   };
 
   var SuicidesChart =  Display.SuicidesChart = function (el) {
-    this.$chart = el
+    this.chart = createChart(el);
   };
 
-  SuicidesChart.prototype.render = function (suicides, conventional) {
-    this.$chart.highcharts({
+  var createChart = function (el) {
+    var chart = new Highcharts.Chart({
       chart: {
-        type: 'pie'
+        type: 'pie',
+        renderTo: el
       },
       title: {
-        text: 'Suicide vs. Conventional Attacks'
+        text: 'Conventional vs. Suicide Attacks'
       },
       plotOptions: {
         pie: {
@@ -25,15 +26,29 @@
         colorByPoint: true,
         data: [{
           name: 'Suicide attacks',
-          y: suicides
+          y: 1
         }, {
           name: 'Conventional attacks',
-          y: conventional
+          y: 1
         }]
       }],
       credits: {
         enabled: 0
       }
     });
+    return chart;
+  };
+
+  SuicidesChart.prototype.update = function (country, year, suicides, conventional) {
+    var name = country + ' (' + year + ')';
+    var data = [
+        {name: 'Suicide attacks', y: suicides},
+        {name: 'Conventional attacks', y: conventional}
+      ];
+    this.chart.setTitle(
+      {text: 'Conventional vs. Suicide Attacks'},
+      {text: name}
+    );
+    this.chart.series[0].setData(data);
   };
 })();

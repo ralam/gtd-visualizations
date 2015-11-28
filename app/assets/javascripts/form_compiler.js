@@ -13,6 +13,17 @@
       var country = formData.country;
       var year = formData.year;
       console.log('Country: ' + country + '; Year: ' + year);
+      $.ajax({
+        url: "./api/records",
+        data: {country: country, year: year},
+        dataType: 'json',
+        success: function(response, XHR, textStatus) {
+          console.dir(response);
+        },
+        error: function(XHR, textStatus, errorThrown) {
+          console.log(textStatus);
+        }
+      });
     });
   };
 })()

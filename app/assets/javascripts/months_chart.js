@@ -48,4 +48,14 @@
     this.chart.series[0].update({name: country}, false);
     this.chart.series[0].setData(attacksPerMonth);
   };
+
+  MonthsChart.prototype.updateSecondCountry = function(country, attacksPerMonth){
+    this.chart.series[1].update({name: country}, false);
+    this.chart.series[1].setData(attacksPerMonth);
+  };
+
+  MonthsChart.prototype.updateThirdCountry = function(country, attacksPerMonth){
+    this.chart.series[2].update({name: country}, false);
+    this.chart.series[2].setData(attacksPerMonth);
+  };
 })();

@@ -26,7 +26,10 @@
         series: [{
             name: 'Attacks',
             data: attacksPerMonth
-        }]
+        }],
+        credits: {
+          enabled: 0
+        }
     });
   };
 })();

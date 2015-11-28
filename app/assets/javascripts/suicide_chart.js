@@ -30,7 +30,10 @@
           name: 'Conventional attacks',
           y: conventional
         }]
-      }]
+      }],
+      credits: {
+        enabled: 0
+      }
     });
   };
 })();

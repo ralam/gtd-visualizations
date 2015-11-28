@@ -21,7 +21,7 @@
           console.dir(response);
         },
         error: function(XHR, textStatus, errorThrown) {
-          console.log(textStatus);
+          console.log(XHR);
         }
       });
     });

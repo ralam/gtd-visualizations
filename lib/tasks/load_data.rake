@@ -1,5 +1,5 @@
 require 'csv'
-require 'charlock_holmes/string'
+# require 'charlock_holmes/string'
 
 namespace :db do
   desc "Import data from CSV"

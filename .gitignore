@@ -11,5 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-*.csv
+data.csv
 .DS_Store

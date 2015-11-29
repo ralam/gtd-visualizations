@@ -14,7 +14,10 @@
         renderTo: el
       },
       title: {
-        text: 'Conventional vs. Suicide Attacks'
+        text: 'Conventional vs. Suicide Attacks',
+      },
+      subtitle: {
+        text: 'Please select a country above'
       },
       plotOptions: {
         pie: {

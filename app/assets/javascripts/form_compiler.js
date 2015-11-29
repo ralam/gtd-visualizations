@@ -20,7 +20,6 @@
       var country = formData.country;
       var year = formData.year;
 
-      console.log('Country: ' + country + '; Year: ' + year);
       $.ajax({
         url: "./api/records",
         data: {country: country, year: year},

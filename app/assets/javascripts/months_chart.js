@@ -25,13 +25,13 @@
           }
         },
         series: [{
-          name: 'Please select a country using the form',
+          name: 'Please select a country above',
           data: []
         }, {
-          name: 'Please select a country using the form',
+          name: 'Please select a country above',
           data: []
         }, {
-          name: 'Please select a country using the form',
+          name: 'Please select a country above',
           data: []
         }],
         credits: {

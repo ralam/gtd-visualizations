@@ -1,17 +1,31 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 #months-chart {
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
   height: 400px;
 }
 
 #attacks-chart {
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
   height: 400px;
 }
 
-#suicides-chart {
-  width: 400px;
+.suicides-chart {
+  position: relative;
+  float: left;
+  width: 30%;
   height: 400px;
+}
+
+.container {
+  position: absolute;
+  padding: 5%;
+  width: 100%;
 }

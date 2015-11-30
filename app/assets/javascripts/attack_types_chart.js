@@ -63,7 +63,7 @@
       attacksCount.push(value);
     }
 
-    this.chart.series[id].update({name: name}, false);
+    this.chart.series[id].update({name: name}, true);
     this.chart.series[id].setData(attacksCount);
   };
 })();

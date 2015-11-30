@@ -43,7 +43,7 @@
 
   MonthsChart.prototype.update = function(country, year, attacksPerMonth, id){
     var name = '' + country + ' (' + year + ')';
-    this.chart.series[id].update({name: name}, false);
+    this.chart.series[id].update({name: name}, true);
     this.chart.series[id].setData(attacksPerMonth);
   };
 })();
